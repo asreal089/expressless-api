@@ -58,9 +58,9 @@ server.listen(PORT, function() {
 //data: the info about the request
 //callback: the function to call to send the response
 let routes = {
-	cep: function(data, res) {
+	cep: async function(data, res) {
 		reqData = JSON.parse(data.body);
-		endereco = buscacep(reqData.cep);
+		let endereco = await buscacep(reqData.cep);
 		console.log(endereco);
 		let payload = endereco;
 		let payloadStr = JSON.stringify(payload);
