@@ -1,6 +1,6 @@
-const buscadorcep = require('buscadorcep');
+const buscadorcep = require("buscadorcep");
 
-module.exports = function (CEP) {
-    const endereco = await buscadorcep(CEP);
-    return endereco;
-}
+module.exports = async function(CEP) {
+	const endereco = await buscadorcep(CEP);
+	return endereco;
+};
